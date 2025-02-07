@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Input</title>
+    <link rel="stylesheet" th:href="@{/css/demo.css}">
+</head>
+<body>
+
+   <p class="funny"> Fill Out the Form</p>
+   <br><br>
+   <form th:action ="@{/validation-demo/processForm}" th:object = "${customer}" method="post">
+
+       First Name : <input type="text" th:field="*{firstName}"/>
+       <br><br>
+
+       Last Name : <input type="text" th:field="*{lastName}"/>
+<!--       Add error message (if present ) -->
+       <span th:if="${#fields.hasErrors('lastName')}"
+             th:errors="*{lastName}" class="error"></span>
+
+       <br><br>
+       Age : <input type="text" th:field="*{age}"/>
+       <!--       Add error message (if present ) -->
+       <span th:if="${#fields.hasErrors('age')}"
+             th:errors="*{age}" class="error"></span>
+
+       <br><br>
+       Email : <input type="text" th:field="*{email}"/>
+       <!--       Add error message (if present ) -->
+       <span th:if="${#fields.hasErrors('email')}"
+             th:errors="*{email}" class="error"></span>
+
+       <br><br>
+       Course Code : <input type="text" th:field="*{courseCode}"/>
+       <!--       Add error message (if present ) -->
+       <span th:if="${#fields.hasErrors('courseCode')}"
+             th:errors="*{courseCode}" class="error"></span>
+
+       <br><br>
+
+       <input type="submit" value="Submit" class="funny"/>
+
+   </form>
+
+</body>
+</html>

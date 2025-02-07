@@ -1,0 +1,14 @@
+body
+{
+ background-color: #f0f0f0; 
+ background-image: url('css/images/image-background.jpg');  /*Path to the background image */
+}
+
+.background {
+   /*background-color: #333;*/
+   /*background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('css/images/image-background.jpg');*/
+
+   background-size: cover; /* Ensures the image covers the entire background */
+   background-position: center center; /* Centers the image */
+   background-repeat: no-repeat;
+}
